@@ -5,7 +5,7 @@ import androidx.room.Relation
 import mz.co.bilheteira.storage.entities.CameraEntity
 import mz.co.bilheteira.storage.entities.RoverEntity
 
-data class RoverAndCamera(
+internal data class RoverAndCamera(
     @Embedded val roverEntity: RoverEntity,
     @Relation(
         parentColumn = "id",

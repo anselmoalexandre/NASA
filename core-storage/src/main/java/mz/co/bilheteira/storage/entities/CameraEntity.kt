@@ -1,9 +1,11 @@
 package mz.co.bilheteira.storage.entities
 
 import androidx.room.ColumnInfo
+import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-data class CameraEntity(
+@Entity(tableName = "camera")
+internal data class CameraEntity(
     @PrimaryKey(autoGenerate = false) val id: Int,
     val name: String,
     @ColumnInfo(name = "full_name")

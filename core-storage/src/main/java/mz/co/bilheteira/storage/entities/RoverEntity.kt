@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import mz.co.bilheteira.storage.data.RoverStatus
 
 @Entity(tableName = "rover")
-data class RoverEntity(
+internal data class RoverEntity(
     @PrimaryKey(autoGenerate = false) val id: Int,
     val name: String,
     val status: RoverStatus,
