@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "camera")
-internal data class CameraEntity(
+data class CameraEntity(
     @PrimaryKey(autoGenerate = false) val id: Int,
     val name: String,
     @ColumnInfo(name = "full_name")

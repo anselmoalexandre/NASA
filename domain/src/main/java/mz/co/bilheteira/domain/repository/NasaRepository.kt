@@ -1,30 +1,27 @@
-package mz.co.bilheteira.storage.dao
+package mz.co.bilheteira.domain.repository
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
+import mz.co.bilheteira.api.domain.local.ApiResponse
 import mz.co.bilheteira.storage.entities.CameraEntity
 import mz.co.bilheteira.storage.entities.PhotoEntity
 import mz.co.bilheteira.storage.entities.RoverEntity
 import mz.co.bilheteira.storage.entities.relations.PhotoWithRover
+import retrofit2.Response
 
-@Dao
-interface NasaDao {
-    @Query("SELECT * FROM rover")
+interface NasaRepository {
+    fun getAllRoversPhotos(
+        earthDate: String = "2015-06-03",
+        sol: Int = 10,
+        privateKey: String
+    ): Response<ApiResponse>
+
     fun getPhotos(): Flow<PhotoWithRover>
 
-    @Query("SELECT * FROM camera WHERE rover_id= :roverId")
     fun getCameras(roverId: Int): Flow<CameraEntity>
 
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRover(roverEntity: RoverEntity)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPhoto(photoEntity: PhotoEntity)
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCamera(cameraEntity: CameraEntity)
 }
