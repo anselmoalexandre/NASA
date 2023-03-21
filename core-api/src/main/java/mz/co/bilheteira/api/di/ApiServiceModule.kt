@@ -4,7 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import mz.co.bilheteira.api.domain.remote.PhotosApiService
+import mz.co.bilheteira.api.domain.remote.NasaApiService
 import retrofit2.Retrofit
 
 @Module
@@ -14,5 +14,5 @@ internal object ApiServiceModule {
     @Provides
     fun provideNasaRoverPhotosApiService(
         retrofit: Retrofit
-    ): PhotosApiService = retrofit.create(PhotosApiService::class.java)
+    ): NasaApiService = retrofit.create(NasaApiService::class.java)
 }
