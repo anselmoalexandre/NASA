@@ -1,4 +1,4 @@
-package mz.co.bilheteira.compose.ui.theme
+package mz.co.bilheteira.resources.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

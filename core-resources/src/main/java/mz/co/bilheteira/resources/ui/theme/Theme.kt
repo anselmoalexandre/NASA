@@ -1,4 +1,4 @@
-package mz.co.bilheteira.compose.ui.theme
+package mz.co.bilheteira.resources.ui.theme
 
 import android.app.Activity
 import android.os.Build
