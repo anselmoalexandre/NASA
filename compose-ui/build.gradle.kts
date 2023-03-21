@@ -1,3 +1,5 @@
+import java.lang.module.ModuleFinder.compose
+
 @Suppress("DSL_SCOPE_VIOLATION") // Refer to issue #22797(https://github.com/gradle/gradle/issues/22797) for more info.
 plugins {
     alias(libs.plugins.android.application)
@@ -24,7 +26,6 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-           // proguardFiles getDefaultProguardFile ('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -38,7 +39,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.2.0"
+        kotlinCompilerExtensionVersion = "1.4.3"
     }
     packagingOptions {
         resources {

@@ -2,19 +2,14 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("dagger.hilt.android.plugin")
-    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
     namespace = "mz.co.bilheteira.domain"
     compileSdk = 33
-
-    defaultConfig {
-        minSdk = 25
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-    }
+    defaultConfig { minSdk = 25 }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -28,10 +23,10 @@ android {
 dependencies {
 
     api(project(":core-api"))
-    implementation(project(":core-storage"))
+    api(project(":core-storage"))
 
-    implementation(libs.hilt)
-    kapt(libs.hilt.compiler)
+    implementation("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-android-compiler:2.45")
 
     implementation(libs.core.ktx)
 
