@@ -5,9 +5,9 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface PhotosApiService {
+interface NasaApiService {
     @GET("mars-photos/api/v1/rovers/curiosity/photos")
-    fun getAllRoversPhotos(
+    suspend fun getAllRoversPhotos(
         @Query("earth_date") earthDate: String = "2015-06-03",
         @Query("sol") sol: Int = 10,
         @Query("api_key") privateKey: String
