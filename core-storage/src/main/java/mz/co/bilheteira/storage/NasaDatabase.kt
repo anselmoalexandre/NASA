@@ -9,7 +9,7 @@ import mz.co.bilheteira.storage.entity.converters.Converters
 
 @Database(entities = [PhotoEntity::class], version = 1)
 @TypeConverters(Converters::class)
-internal abstract class NasaDatabase : RoomDatabase() {
+abstract class NasaDatabase : RoomDatabase() {
     abstract fun getNasaDao(): NasaDao
 
     companion object {

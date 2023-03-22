@@ -12,7 +12,7 @@ import mz.co.bilheteira.storage.dao.NasaDao
 
 @Module
 @InstallIn(SingletonComponent::class)
-internal object DatabaseModule {
+object DatabaseModule {
 
     @Provides
     fun provideDatabase(

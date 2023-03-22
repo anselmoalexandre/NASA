@@ -10,7 +10,7 @@ import mz.co.bilheteira.storage.entity.PhotoEntity
 @Dao
 interface NasaDao {
     @Query("SELECT * FROM photos")
-    fun getPhotos(): Flow<PhotoEntity>
+    fun getPhotos(): Flow<List<PhotoEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertPhoto(photoEntity: PhotoEntity)
