@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="mz.co.bilheteira.nasa.ui.ListFragment"
+        android:name="mz.co.bilheteira.nasa.ui.list.RoverListFragment"
         android:label="Photos"
         tools:layout="@layout/fragment_list">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="mz.co.bilheteira.nasa.ui.DetailsFragment"
+        android:name="mz.co.bilheteira.nasa.ui.details.DetailsFragment"
         android:label="Photo details"
         tools:layout="@layout/fragment_details">
 

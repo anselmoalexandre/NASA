@@ -18,7 +18,7 @@
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/photo"
             android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_height="80dp"
             android:layout_marginStart="5dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/name"
+            android:id="@+id/rover"
+            style="@style/Theme.TextAppearance.TitleMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -36,7 +37,8 @@
             tools:text="Username" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tags"
+            android:id="@+id/camera"
+            style="@style/Theme.TextAppearance.TitleSmall"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -44,7 +46,20 @@
             android:layout_marginEnd="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/photo"
-            app:layout_constraintTop_toBottomOf="@id/name"
-            tools:text="tag 1, tag 2, tag 3" />
+            app:layout_constraintTop_toBottomOf="@id/rover"
+            tools:text="Camera" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/date"
+            style="@style/Theme.TextAppearance.TitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/photo"
+            app:layout_constraintTop_toBottomOf="@id/camera"
+            tools:text="Earth Date" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,4 +1,4 @@
-package mz.co.bilheteira.nasa.ui
+package mz.co.bilheteira.nasa.ui.details
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

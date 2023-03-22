@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "NASA"
-include(":app", ":compose-ui", ":core-storage", ":core-api", ":core-resources", ":domain")
+include(":app", ":compose-ui", ":core-storage", ":core-api", ":core-resources", ":domain", ":utils")

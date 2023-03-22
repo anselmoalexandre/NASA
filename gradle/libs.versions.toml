@@ -28,6 +28,7 @@ vectordrawable = "androidx.vectordrawable:vectordrawable:1.1.0"
 navigation-fragment = "androidx.navigation:navigation-fragment-ktx:2.5.3"
 navigation-ui = "androidx.navigation:navigation-ui-ktx:2.5.3"
 lifecycle-extensions = "androidx.lifecycle:lifecycle-extensions:2.2.0"
+lifecycle-livedata = "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
 material = "com.google.android.material:material:1.8.0"
 recyclerview = "androidx.recyclerview:recyclerview-selection:1.1.0"
 lifecycle-runtime = "androidx.lifecycle:lifecycle-runtime-ktx:2.6.0"
@@ -57,7 +58,7 @@ room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-test = { module = "androidx.room:room-testing", version.ref = "room" }
 
-coil = "io.coil-kt:coil-compose:2.1.0"
+coil = "io.coil-kt:coil-compose:2.2.2"
 
 junit = "junit:junit:4.13.2"
 robolectric = "org.robolectric:robolectric:4.9"

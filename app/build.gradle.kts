@@ -2,6 +2,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -39,7 +41,11 @@ android {
 dependencies {
 
     implementation(project(":core-resources"))
-    implementation(project (":domain"))
+    implementation(project(":domain"))
+    implementation(project(":utils"))
+
+    implementation("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-android-compiler:2.45")
 
     implementation(libs.retrofit)
     implementation(libs.retrofit.moshi.converter)
@@ -51,6 +57,10 @@ dependencies {
     implementation(libs.constraint.layout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
+
+    implementation(libs.timber)
+
+    implementation(libs.coil)
 
     testImplementation(libs.junit)
 }
