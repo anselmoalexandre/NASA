@@ -21,9 +21,8 @@ android {
 }
 
 dependencies {
-
     api(project(":core-api"))
-    api(project(":core-storage"))
+    implementation(project(":core-storage"))
 
     implementation("com.google.dagger:hilt-android:2.45")
     kapt("com.google.dagger:hilt-android-compiler:2.45")

@@ -9,8 +9,8 @@ import mz.co.bilheteira.api.domain.remote.NasaApiService
 import mz.co.bilheteira.domain.data.CameraModel
 import mz.co.bilheteira.domain.data.PhotoModel
 import mz.co.bilheteira.domain.data.RoverModel
+import mz.co.bilheteira.domain.data.toPhotoEntity
 import mz.co.bilheteira.storage.dao.NasaDao
-import mz.co.bilheteira.storage.entity.PhotoEntity
 import retrofit2.Response
 
 internal class NasaRepositoryImpl(
@@ -18,42 +18,45 @@ internal class NasaRepositoryImpl(
     private val nasaApiService: NasaApiService
 ) : NasaRepository {
     override suspend fun getAllRemoteRoversPhotos(
+        roverName: String,
         earthDate: String,
         sol: Int,
         privateKey: String
     ): Response<ApiResponse> {
         return withContext(Dispatchers.IO) {
-            nasaApiService.getAllRoversPhotos(earthDate, sol, privateKey)
+            nasaApiService.getAllRoversPhotos(roverName, earthDate, sol, privateKey)
         }
     }
 
-    override fun getLocalRoversPhotos(): Flow<PhotoModel> = nasaDao.getPhotos().map {
-        val camera = CameraModel(
-            id = it.camera.id,
-            name = it.camera.name,
-            fullName = it.camera.fullName,
-            roverId = it.camera.roverId
-        )
+    override fun getLocalRoversPhotos(): Flow<List<PhotoModel>> = nasaDao.getPhotos().map {
+        it.map { photoEntity ->
+            val camera = CameraModel(
+                id = photoEntity.camera.id,
+                name = photoEntity.camera.name,
+                fullName = photoEntity.camera.fullName,
+                roverId = photoEntity.camera.roverId
+            )
 
-        val rover = RoverModel(
-            id = it.rover.id,
-            name = it.rover.name,
-            status = it.rover.status,
-            landingDate = it.rover.landingDate,
-            launchDate = it.rover.launchDate
-        )
+            val rover = RoverModel(
+                id = photoEntity.rover.id,
+                name = photoEntity.rover.name,
+                status = photoEntity.rover.status,
+                landingDate = photoEntity.rover.landingDate,
+                launchDate = photoEntity.rover.launchDate
+            )
 
-        PhotoModel(
-            id = it.id,
-            sol = it.sol,
-            photo = it.photo,
-            earthDate = it.earthDate,
-            camera = camera,
-            rover = rover
-        )
+            PhotoModel(
+                id = photoEntity.id,
+                sol = photoEntity.sol,
+                photo = photoEntity.photo,
+                earthDate = photoEntity.earthDate,
+                camera = camera,
+                rover = rover
+            )
+        }
     }
 
-    override suspend fun insertPhoto(photoEntity: PhotoEntity) {
-        withContext(Dispatchers.IO) { nasaDao.insertPhoto(photoEntity) }
+    override suspend fun insertPhoto(photoModel: PhotoModel) {
+        withContext(Dispatchers.IO) { nasaDao.insertPhoto(photoModel.toPhotoEntity()) }
     }
 }
