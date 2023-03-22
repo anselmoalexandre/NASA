@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.safe.args)
     id("com.google.dagger.hilt.android")
     kotlin("kapt")
 }
@@ -39,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation(project(":core-resources"))
     implementation(project(":domain"))
     implementation(project(":utils"))

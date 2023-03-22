@@ -12,6 +12,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import mz.co.bilheteira.domain.data.PhotoModel
@@ -28,9 +29,7 @@ class RoverListFragment : Fragment(R.layout.fragment_list) {
     private val viewModel: RoverListViewModel by viewModels()
 
     private val adapter by lazy {
-        RoverAdapter {
-
-        }
+        RoverAdapter { onPhotoSelection(it.id) }
     }
 
     override fun onCreateView(
@@ -94,6 +93,10 @@ class RoverListFragment : Fragment(R.layout.fragment_list) {
     private fun renderContent(photos: List<PhotoModel>) {
         renderSuccess()
         adapter.submitList(photos)
+    }
+
+    private fun onPhotoSelection(photoId: Int) {
+        findNavController().navigate(RoverListFragmentDirections.toDetailsFragment(photoId))
     }
 
     override fun onDestroyView() {

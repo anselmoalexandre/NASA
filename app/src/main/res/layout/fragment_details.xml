@@ -83,119 +83,119 @@
                         app:layout_constraintTop_toTopOf="@id/view" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/userLabel"
+                        android:id="@+id/roverLabel"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:text="User"
+                        android:text="Rover:"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/view" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/user"
+                        android:id="@+id/rover"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        app:layout_constraintStart_toEndOf="@id/userLabel"
+                        app:layout_constraintStart_toEndOf="@id/roverLabel"
                         app:layout_constraintTop_toBottomOf="@id/view" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/downloadsLabel"
+                        android:id="@+id/launchDateLabel"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:text="Downloads"
+                        android:text="Launch date:"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/userLabel" />
+                        app:layout_constraintTop_toBottomOf="@id/roverLabel" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/downloads"
+                        android:id="@+id/launchDate"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        app:layout_constraintStart_toEndOf="@id/downloadsLabel"
-                        app:layout_constraintTop_toBottomOf="@id/user" />
+                        app:layout_constraintStart_toEndOf="@id/launchDateLabel"
+                        app:layout_constraintTop_toBottomOf="@id/rover" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/likesLabel"
+                        android:id="@+id/landingDateLabel"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:text="Likes"
+                        android:text="Landing date:"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/downloadsLabel" />
+                        app:layout_constraintTop_toBottomOf="@id/launchDateLabel" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/likes"
+                        android:id="@+id/landingDate"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        app:layout_constraintStart_toEndOf="@id/likesLabel"
-                        app:layout_constraintTop_toBottomOf="@id/downloadsLabel" />
+                        app:layout_constraintStart_toEndOf="@id/landingDateLabel"
+                        app:layout_constraintTop_toBottomOf="@id/launchDate" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/commentsLabel"
+                        android:id="@+id/cameraLabel"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:text="Comments"
+                        android:text="Camera:"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/likesLabel" />
+                        app:layout_constraintTop_toBottomOf="@id/landingDateLabel" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/comments"
+                        android:id="@+id/camera"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        app:layout_constraintStart_toEndOf="@id/commentsLabel"
-                        app:layout_constraintTop_toBottomOf="@id/likesLabel" />
+                        app:layout_constraintStart_toEndOf="@id/cameraLabel"
+                        app:layout_constraintTop_toBottomOf="@id/landingDateLabel" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tagsLabel"
+                        android:id="@+id/cameraFullNameLabel"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        android:text="Tags"
+                        android:text="Full name:"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/commentsLabel" />
+                        app:layout_constraintTop_toBottomOf="@id/cameraLabel" />
 
                     <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/tags"
+                        android:id="@+id/cameraFullName"
                         style="@style/Theme.TextAppearance.TitleMedium"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:textColor="?attr/colorOnSurface"
-                        app:layout_constraintStart_toEndOf="@id/tagsLabel"
-                        app:layout_constraintTop_toBottomOf="@id/commentsLabel" />
+                        app:layout_constraintStart_toEndOf="@id/cameraFullNameLabel"
+                        app:layout_constraintTop_toBottomOf="@id/camera" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -218,7 +218,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:indeterminate="true"
-                android:visibility="gone"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
