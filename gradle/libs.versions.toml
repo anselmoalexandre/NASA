@@ -75,6 +75,7 @@ fixture = "com.appmattus.fixture:fixture:1.2.0"
 truth = "com.google.truth:truth:1.1.3"
 mockk = "io.mockk:mockk:1.13.2"
 compose-test = { module = "androidx.compose.ui:ui-test-junit4", version.ref = "compose" }
+coroutines-test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.2"
 
 junit-androidx = "androidx.test.ext:junit:1.1.3"
 espresso = "androidx.test.espresso:espresso-core:3.4.0"

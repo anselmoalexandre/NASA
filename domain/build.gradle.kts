@@ -29,5 +29,9 @@ dependencies {
 
     implementation(libs.core.ktx)
 
+    implementation(libs.truth)
+
     testImplementation(libs.junit)
+    testImplementation(libs.mockk)
+    testImplementation(libs.coroutines.test)
 }
