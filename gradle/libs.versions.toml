@@ -10,6 +10,8 @@ moshi = "1.14.0"
 safe-args = "2.5.3"
 retofit = "2.9.0"
 logging-interceptor = "4.10.0"
+compose-navigation = "2.5.3"
+androidxLifecycle = "2.6.1"
 
 [libraries]
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
@@ -21,6 +23,8 @@ compose-livedata = "androidx.compose.runtime:runtime-livedata:1.3.3"
 compose-accompanist = "com.google.accompanist:accompanist-drawablepainter:0.25.1"
 compose-ui-test = "androidx.compose.ui:ui-test-junit4:1.3.3"
 compose-tooling = "androidx.compose.ui:ui-tooling:1.3.3"
+compose-navigation = { module="androidx.navigation:navigation-compose", version.ref = "compose-navigation" }
+compose-hilt-navigation = "androidx.hilt:hilt-navigation-compose:1.0.0"
 
 appcompat = "androidx.appcompat:appcompat:1.6.1"
 constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
@@ -39,6 +43,9 @@ lifecycle-viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 kotlin-stdlib = "org.jetbrains.kotlin:kotlin-stdlib:1.0.0"
 lifecycle-common = "androidx.lifecycle:lifecycle-common-java8:2.5.1"
 legacy-support = "androidx.legacy:legacy-support-v4:1.0.0"
+
+androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
+androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
 
 timber = "com.jakewharton.timber:timber:5.0.1"
 
@@ -59,6 +66,7 @@ room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-test = { module = "androidx.room:room-testing", version.ref = "room" }
 
 coil = "io.coil-kt:coil-compose:2.2.2"
+coil-compose = "io.coil-kt:coil-compose:2.2.2"
 
 junit = "junit:junit:4.13.2"
 robolectric = "org.robolectric:robolectric:4.9"
@@ -83,4 +91,4 @@ test = ["junit", "robolectric", "test-core-ktx", "fixture", "truth", "mockk", "e
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-safe-args = { id = "androidx.navigation:navigation-safe-args-gradle-plugin", version.ref = "safe-args" }
+safe-args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "safe-args" }

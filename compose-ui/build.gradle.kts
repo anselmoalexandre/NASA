@@ -1,9 +1,9 @@
-import java.lang.module.ModuleFinder.compose
-
 @Suppress("DSL_SCOPE_VIOLATION") // Refer to issue #22797(https://github.com/gradle/gradle/issues/22797) for more info.
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt")
 }
 
 android {
@@ -50,12 +50,24 @@ android {
 
 dependencies {
     implementation(project(":core-resources"))
+    implementation(project(":domain"))
+    implementation(project(":utils"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime)
     implementation(libs.activity.compose)
 
     implementation(libs.compose.preview)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.hilt.navigation)
+    implementation(libs.androidx.lifecycle.viewModelCompose)
+    implementation(libs.androidx.lifecycle.runtimeCompose)
+
+    implementation(libs.timber)
+    implementation(libs.coil.compose)
+
+    implementation("com.google.dagger:hilt-android:2.45")
+    kapt("com.google.dagger:hilt-android-compiler:2.45")
 
     testImplementation(libs.junit)
 }

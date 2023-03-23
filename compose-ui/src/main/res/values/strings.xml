@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Nasa Compose-ui</string>
+    <string name="error">Data unavailable</string>
+    <string name="photo_description">Rover photo</string>
+    <string name="photo_details">Photo details</string>
+    <string name="photos">Photos</string>
 </resources>

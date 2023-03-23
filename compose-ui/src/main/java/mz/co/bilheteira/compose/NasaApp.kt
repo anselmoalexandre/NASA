@@ -1,4 +1,7 @@
 package mz.co.bilheteira.compose
 
-class NasaApp {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class NasaApp : Application()
