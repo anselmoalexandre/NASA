@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.hilt)
     kotlin("kapt")
 }
 
@@ -24,8 +24,8 @@ dependencies {
     api(project(":core-api"))
     implementation(project(":core-storage"))
 
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-android-compiler:2.45")
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
     implementation(libs.core.ktx)
 

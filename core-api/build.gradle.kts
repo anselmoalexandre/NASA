@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.hilt)
     id("kotlin-kapt")
 }
 
@@ -30,8 +30,8 @@ dependencies {
     implementation(libs.moshi.adapters)
     implementation(libs.moshi.codegen)
 
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-android-compiler:2.45")
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
     implementation(libs.core.ktx)
 

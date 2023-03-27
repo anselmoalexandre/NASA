@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("com.google.dagger.hilt.android")
+    alias(libs.plugins.hilt)
     kotlin("kapt")
 }
 
@@ -66,8 +66,8 @@ dependencies {
     implementation(libs.timber)
     implementation(libs.coil.compose)
 
-    implementation("com.google.dagger:hilt-android:2.45")
-    kapt("com.google.dagger:hilt-android-compiler:2.45")
+    implementation(libs.hilt)
+    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
 }
