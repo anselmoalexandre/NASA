@@ -18,7 +18,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner="androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -40,9 +40,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-resources"))
-    implementation(project(":domain"))
-    implementation(project(":utils"))
+    implementation(project(path = ":core-resources"))
+    implementation(project(path = ":domain"))
+    implementation(project(path = ":utils"))
 
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)
@@ -62,5 +62,8 @@ dependencies {
 
     implementation(libs.coil)
 
+    implementation(libs.truth)
+
     testImplementation(libs.junit)
+    testImplementation(libs.coroutines.test)
 }

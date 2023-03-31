@@ -1,4 +1,4 @@
-package mz.co.bilheteira.domain.repository
+package mz.co.bilheteira.nasa.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

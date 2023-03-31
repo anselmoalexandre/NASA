@@ -22,7 +22,7 @@ android {
 
 dependencies {
     api(project(":core-api"))
-    implementation(project(":core-storage"))
+    api(project(":core-storage"))
 
     implementation(libs.hilt)
     kapt(libs.hilt.compiler)

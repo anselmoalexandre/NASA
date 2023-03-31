@@ -1,9 +1,10 @@
-package mz.co.bilheteira.domain.repository
+package mz.co.bilheteira.nasa.domain.repository
 
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import mz.co.bilheteira.api.domain.local.ApiResponse
 import mz.co.bilheteira.domain.data.PhotoModel
+import mz.co.bilheteira.domain.repository.NasaRepository
 import retrofit2.Response
 
 class FakeNasaRepository(
