@@ -25,19 +25,8 @@ description of the modularization strategy used in
 [modularization learning journey](docs/ModularizationLearningJourney.md).
 
 # UI
-The app was designed using [Material 3 guidelines](https://m3.material.io/). Learn more about the design process and
-obtain the design files in the [Now in Android Material 3 Case Study](https://goo.gle/nia-figma) (design assets [also available as a PDF](docs/Now-In-Android-Design-File.pdf)).
+The app was designed using [Material 3 guidelines](https://m3.material.io/).
 
 The Screens and UI elements are built entirely using [Jetpack Compose](https://developer.android.com/jetpack/compose).
-
-The app has two themes:
-
-- Dynamic color - uses colors based on the [user's current color theme](https://material.io/blog/announcing-material-you) (if supported)
-- Default theme - uses predefined colors when dynamic color is not supported
-
-Each theme also supports dark mode.
-
-The app uses adaptive layouts to
-[support different screen sizes](https://developer.android.com/guide/topics/large-screens/support-different-screen-sizes).
 
 Find out more about the [UI architecture here](docs/ArchitectureLearningJourney.md#ui-layer).
