@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
@@ -31,6 +32,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import mz.co.bilheteira.compose.R
 import mz.co.bilheteira.compose.screens.list.RoverListViewModel.RoverUIState
+import mz.co.bilheteira.compose.ui.NasaTopBar
 import mz.co.bilheteira.domain.data.PhotoModel
 
 @Composable
@@ -55,11 +57,8 @@ internal fun RoverListScreen(
     modifier: Modifier = Modifier,
     onRoverPhotoClick: (PhotoModel) -> Unit
 ) {
-    Column {
-        TopAppBar(
-            title = { NasaAppBarTitle() },
-            colors = TopAppBarDefaults.smallTopAppBarColors(),
-        )
+    Column(modifier = modifier.fillMaxSize()) {
+        NasaTopBar(titleRes = R.string.photos)
 
         Spacer(modifier = Modifier.padding(10.dp))
 
@@ -190,9 +189,4 @@ private fun RoverPhotoContent(
             modifier = Modifier.padding(vertical = 5.dp)
         )
     }
-}
-
-@Composable
-private fun NasaAppBarTitle() {
-    Text(text = stringResource(id = R.string.photos))
 }

@@ -7,7 +7,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import mz.co.bilheteira.compose.screens.details.RoverDetailsRoute
-import mz.co.bilheteira.compose.screens.details.RoverDetailsScreen
 import mz.co.bilheteira.compose.screens.list.RoverListRoute
 
 
@@ -24,7 +23,6 @@ fun NasaNavHost(navHostController: NavHostController) {
         composable(route = NasaNavGraph.RoverList.route) {
             RoverListRoute(onRoverPhotoClick = {
                 val photoId = it.id
-                //navHostController.navigate(NasaNavGraph.RoverDetails.route.plus("/$photoId"))
                 navHostController.navigate("details/$photoId")
             })
         }

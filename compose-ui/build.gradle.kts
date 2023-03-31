@@ -62,6 +62,7 @@ dependencies {
     implementation(libs.compose.hilt.navigation)
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
+    implementation(libs.androidx.compose.material3.windowSizeClass)
 
     implementation(libs.timber)
     implementation(libs.coil.compose)

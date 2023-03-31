@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import mz.co.bilheteira.compose.navigation.NasaNavHost
+import mz.co.bilheteira.compose.ui.NasaApp
 import mz.co.bilheteira.resources.ui.theme.NASATheme
 
 @AndroidEntryPoint
@@ -14,8 +14,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val navController = rememberNavController()
-            NASATheme() {
-                NasaNavHost(navController)
+            NASATheme {
+                NasaApp(navController = navController)
             }
         }
     }

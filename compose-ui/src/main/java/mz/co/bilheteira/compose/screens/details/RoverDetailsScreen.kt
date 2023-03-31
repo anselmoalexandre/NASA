@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,7 +28,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
 import mz.co.bilheteira.compose.R
 import mz.co.bilheteira.compose.screens.details.DetailsViewModel.PhotoUIState
+import mz.co.bilheteira.compose.ui.NasaTopBar
 
+@ExperimentalMaterial3Api
 @Composable
 internal fun RoverDetailsRoute(
     photoId: Int,
@@ -43,6 +46,7 @@ internal fun RoverDetailsRoute(
     )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RoverDetailsScreen(
     uiState: PhotoUIState,
@@ -68,6 +72,7 @@ fun RoverDetailsScreen(
     }
 }
 
+@ExperimentalMaterial3Api
 @Composable
 private fun RoverDetailsContent(
     photoUrl: String,
@@ -82,9 +87,10 @@ private fun RoverDetailsContent(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimary)
     ) {
         Column {
-            Row {
-                PhotoIcon(url = photoUrl)
-            }
+            NasaTopBar(titleRes = R.string.photo_details)
+
+            Row { PhotoIcon(url = photoUrl) }
+
             Box(
                 modifier = Modifier.padding(16.dp)
             ) {
