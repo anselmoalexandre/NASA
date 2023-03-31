@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -33,41 +34,42 @@ import mz.co.bilheteira.compose.ui.NasaTopBar
 @ExperimentalMaterial3Api
 @Composable
 internal fun RoverDetailsRoute(
-    photoId: Int,
-    modifier: Modifier = Modifier,
-    viewModel: DetailsViewModel = hiltViewModel()
+    photoId: Int, modifier: Modifier = Modifier, viewModel: DetailsViewModel = hiltViewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     viewModel.fetchPhotoDetailsFromLocalStorage(photoId)
 
     RoverDetailsScreen(
-        uiState = uiState,
-        modifier = modifier
+        uiState = uiState, modifier = modifier
     )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RoverDetailsScreen(
-    uiState: PhotoUIState,
-    modifier: Modifier = Modifier
+    uiState: PhotoUIState, modifier: Modifier = Modifier
 ) {
-    Column(
-        modifier = modifier,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        when (uiState) {
-            PhotoUIState.Loading -> {}
-            is PhotoUIState.Error -> RoverDetailsErrorScreen()
-            is PhotoUIState.Content -> RoverDetailsContent(
-                photoUrl = uiState.photoModel.photo,
-                roverName = uiState.photoModel.rover.name,
-                launchDate = uiState.photoModel.rover.launchDate,
-                landingDate = uiState.photoModel.rover.landingDate,
-                cameraName = uiState.photoModel.camera.name,
-                cameraFullName = uiState.photoModel.camera.fullName,
-                modifier = modifier
-            )
+    Column(modifier = modifier.fillMaxSize()) {
+        NasaTopBar(titleRes = R.string.photo_details)
+
+        Spacer(modifier = Modifier.padding(10.dp))
+
+        Column(
+            modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            when (uiState) {
+                PhotoUIState.Loading -> {}
+                is PhotoUIState.Error -> RoverDetailsErrorScreen()
+                is PhotoUIState.Content -> RoverDetailsContent(
+                    photoUrl = uiState.photoModel.photo,
+                    roverName = uiState.photoModel.rover.name,
+                    launchDate = uiState.photoModel.rover.launchDate,
+                    landingDate = uiState.photoModel.rover.landingDate,
+                    cameraName = uiState.photoModel.camera.name,
+                    cameraFullName = uiState.photoModel.camera.fullName,
+                    modifier = modifier
+                )
+            }
         }
     }
 }
@@ -87,8 +89,6 @@ private fun RoverDetailsContent(
         colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.onPrimary)
     ) {
         Column {
-            NasaTopBar(titleRes = R.string.photo_details)
-
             Row { PhotoIcon(url = photoUrl) }
 
             Box(
@@ -102,8 +102,7 @@ private fun RoverDetailsContent(
                     Spacer(modifier = Modifier.padding(12.dp))
                     Row {
                         DetailsTitle(
-                            title = stringResource(id = R.string.photo_details),
-                            modifier = modifier
+                            title = stringResource(id = R.string.photo_details), modifier = modifier
                         )
                     }
 
@@ -177,8 +176,7 @@ private fun PhotoIcon(url: String) {
 
 @Composable
 private fun DetailsTitle(
-    title: String,
-    modifier: Modifier
+    title: String, modifier: Modifier
 ) {
     Text(text = title, modifier = modifier, style = MaterialTheme.typography.headlineMedium)
 }

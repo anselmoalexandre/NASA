@@ -49,9 +49,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":core-resources"))
-    implementation(project(":domain"))
-    implementation(project(":utils"))
+    implementation(project(path = ":core-resources"))
+    implementation(project(path = ":domain"))
+    implementation(project(path = ":utils"))
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime)
@@ -60,6 +60,7 @@ dependencies {
     implementation(libs.compose.preview)
     implementation(libs.compose.navigation)
     implementation(libs.compose.hilt.navigation)
+
     implementation(libs.androidx.lifecycle.viewModelCompose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.compose.material3.windowSizeClass)
